@@ -5,12 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="grid">
-
+    <div class="header">
+        <div class="menu-left">
+            <div class="menu-item" id="logo">Etch-a-Sketch</div>
+            <div class="menu-item" id="new">
+                <span class="material-icons">&#xe145</span>
+                <span class="tooltiptext">New sketch</span>
+            </div>
+            <div class="menu-item" id="save">
+                <span class="material-icons md-24">&#xe161</span>
+                <span class="tooltiptext">Save sketch (not implemented)</span>
+            </div>
+            <div class="menu-item" id="mode">
+                <span class="material-icons md-24">&#xe51c</span>
+                <span class="tooltiptext">Light/Dark mode</span>
+            </div>
+        </div>
+        <div class="menu-right">
+            <div class="menu-item" id="personnal">
+                <a href="https://github.com/pierrefittel">
+                    <span class="material-icons">&#xe853</span>
+                    <span class="tooltiptext">Profile (external link)</span>
+                </a>
+            </div>
+        </div>
     </div>
+    <div class="workspace">
+        <div class="toolbox">
+            <div class="tool" id="color-picker">
+                <input type="color" id="color-wheel" value="#783b3b">
+                <span class="tooltiptext">Color picker</span>
+            </div>
+            <div class="tool" id="canvas-res">
+                <span class="material-icons" id="res-icon">&#xe5d0</span>
+                <span class="tooltiptext">Canvas resolution</span>
+            </div>
+            <div class="tool" id="res-slider">
+                <input type="range" id="slider" min="16" max="256">
+                <div id="slider-value">256<br>x<br>256</div>
+            </div>
+        </div>
+        <div id="canvas-container">
+            <div id="canvas"></div>
+        </div>
+        <div id="copyright">© 2022 Landry Pierrefitte</div>
+    </div>    
 </body>
 </html>

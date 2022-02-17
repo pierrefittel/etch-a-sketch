@@ -1,8 +1,149 @@
-#grid {
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+* { 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(46, 46, 46);
+    font-family: 'Sora';
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    box-shadow: 0px 2px 2px rgb(29, 29, 29);
+}
+
+.menu-left, .menu-right {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#logo:hover {
+    background-color: inherit;
+}
+
+.menu-item {
+    padding: 5px;
+    font-size: 12px;
+    transition-duration: 0.4s;
+    user-select: none;
+}
+
+.menu-item:hover {
+    background-color: #868686;
+}
+
+.workspace {
+    display: flex;
+    height: 100%;
+}
+
+.toolbox {
+    position: relative;
+    height: 96vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    box-shadow: 2px 2px 2px rgb(29, 29, 29);
+}
+
+.tool {
+    width: 100%;
+    font-size: 12px;
+    transition-duration: 0.4s;
+    user-select: none;
+}
+
+.tool:hover {
+    background-color: #868686;
+}
+
+#color-picker:hover {
+    background-color: inherit;
+}
+
+/* Custom HTML color picker */
+#color-picker input {
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+#color-picker input::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgb(31, 31, 31);
+}
+
+#res-slider {
+    visibility: hidden;
+}
+
+#slider-value {
+    font-size: 10px;
+}
+
+/* Custom HMTL range input slider */
+#res-slider input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 55px;
+    left: 40px;
+    width: 120px;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+} 
+#res-slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #646464;
+    cursor: pointer;
+}
+
+#canvas-container {
+    display: flex;
+    flex: 1;
+}
+
+#canvas {
     margin: auto;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    background-color: white;
+    box-shadow: 1px 1px 2px rgb(0, 0, 0);
     height: 500px;
     width: 500px;
     display: flex;
@@ -21,4 +162,49 @@
     height: auto;
     width: auto;
     flex: 1;
+    user-select: none;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    font-size: 8px;
+    width: 100px;
+    background-color: rgb(119, 119, 119);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 2px;
+    position: absolute;
+    top: 40px;
+    opacity: 0.7;
+}
+
+.tool .tooltiptext {
+    top: auto;
+    left: 40px;
+}
+
+#personnal .tooltiptext {
+    right: 40px;
+}
+
+.menu-item:hover .tooltiptext, .tool:hover .tooltiptext {
+    visibility: visible;
+}
+
+#copyright {
+    align-self: flex-end;
+    font-size: 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.light-mode-menu {
+    background-color: rgb(224, 224, 224);
+    color: rgb(39, 39, 39);
+    box-shadow: 2px 2px 2px rgb(153, 153, 153);
+}
+
+.light-mode-canvas {
+    background-color: rgb(255, 255, 255);
 }
